@@ -2,9 +2,9 @@
 
 ## Plan and progress
 
- - [ ] Create `.devcontainer/devcontainer.json` that specifies a GPU-enabled machine type and installs Python and ML dependencies (Hugging Face Transformers).
- - [ ] Configure a dotfiles repository with shell aliases and link it in Codespaces account settings so customizations persist automatically across all new Codespaces.
-    - [ ] Add shell aliases     
+ - [x] Create `.devcontainer/devcontainer.json` that specifies a GPU-enabled machine type and installs Python and ML dependencies (Hugging Face Transformers).
+ - [x] Configure a dotfiles repository with shell aliases and link it in Codespaces account settings so customizations persist automatically across all new Codespaces.
+    - [x] Add shell aliases     
  - [ ] Launch the Codespace and verify that the GPU is accessible and the development environment matches the configuration
     - [ ] For this I will need GPU access!!!
 - [ ] Create a `.github/workflows/ci.yml` that triggers on push and pull request events. The workflow should install dependencies using make install, run a linter with make lint, and execute a test suite with make test.
