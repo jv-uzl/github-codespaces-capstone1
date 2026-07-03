@@ -19,6 +19,7 @@ Lint config is at `pyproject.toml` (`[tool.ruff]`), run with `ruff check .`. `ru
 ## Environment
 
 - Devcontainer config is at `.devcontainer/devcontainer.json`; Python deps are at `.devcontainer/requirements.txt` (not repo root — any future Makefile `install` target must reference this path explicitly).
+- The devcontainer builds from `.devcontainer/Dockerfile` (not `image:` directly) so it can drop the base image's broken `dl.yarnpkg.com` apt source before feature installs run — that source's signing key expired 2026-01-23, which otherwise makes `apt-get update` fail and aborts the `nvidia-cuda` feature build. This project doesn't use Yarn/Node.js, so the source is just removed rather than patched.
 - The devcontainer requires GPU (`hostRequirements.gpu: true`) and only builds correctly on GitHub's GPU Codespaces machine type (6-core, 112GB RAM, 1x Tesla T4). `postStartCommand` runs `nvidia-smi` but degrades gracefully (prints a warning) if no GPU is present, rather than failing hard.
 - `requirements.txt` pins `torch==2.3.1` against the CUDA 12.1 wheel index, while the devcontainer's `nvidia-cuda` feature installs CUDA 12.2. These are currently compatible — if either is bumped, keep them in sync.
 
