@@ -7,8 +7,8 @@
     - [x] Add shell aliases     
  - [ ] Launch the Codespace and verify that the GPU is accessible and the development environment matches the configuration
     - [ ] For this I will need GPU access!!!
-- [ ] Create a `.github/workflows/ci.yml` that triggers on push and pull request events. The workflow should install dependencies using make install, run a linter with make lint, and execute a test suite with make test.
-- [ ] Add a deployment step using make deploy that runs on the main branch to simulate a production release, matching the same Makefile targets used locally in the Codespace.
+- [x] Create a `.github/workflows/ci.yml` that triggers on push and pull request events. The workflow should install dependencies using make install, run a linter with make lint, and execute a test suite with make test.
+- [x] Add a deployment step using make deploy that runs on the main branch to simulate a production release, matching the same Makefile targets used locally in the Codespace.
 - [ ] Use GitHub Copilot Chat to generate a Python function (such as a data preprocessing utility or a Click-based CLI tool) and document the prompt used and the output received.
 - [ ]  Use Copilot CLI to construct a shell command from a natural language description using the ?? syntax.
 - [ ]  Compare the Chat and CLI interaction models — describe when each is more effective and what context each requires to produce accurate suggestions.
